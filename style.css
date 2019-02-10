@@ -1,0 +1,45 @@
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+#slider-wrapper {
+    margin: 20px 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.single-slider {
+    /*float: left;*/
+    min-width: 270px;
+    height: 400px;
+    background-color: aqua;
+    margin-right: 30px;
+    position: relative;
+}
+
+#buttons-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 500px;
+}
+
+.left-click, .right-click {
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+}
+
+.right-click {
+
+}
