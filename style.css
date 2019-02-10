@@ -34,12 +34,9 @@
     padding: 0 500px;
 }
 
-.left-click, .right-click {
+#left-click, #right-click {
     width: 40px;
     height: 40px;
     background-color: blue;
 }
 
-.right-click {
-
-}
