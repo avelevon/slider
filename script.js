@@ -2,6 +2,7 @@
 
 let dist = 300;
 
+
 function slider(cycle, direction) {
     if (direction === 'left') {
         let position = dist * (-2);
