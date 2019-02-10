@@ -8,7 +8,7 @@ function slider(cycle, direction) {
         let position = dist * (-2);
         $('.single-slider').animate({
             left: position,
-        });
+        }, 2000);
         if (cycle === 1) {
             $('.single-slider').promise().done(function () {
                 $('.single-slider:last').after($('.single-slider[data-id="5"]'));
@@ -27,7 +27,7 @@ function slider(cycle, direction) {
         let position = 0;
         $('.single-slider').animate({
             left: position,
-        });
+        }, 2000);
         if (cycle === 10) {
             $('.single-slider').promise().done(function () {
                 $('.single-slider:first').before($('.single-slider[data-id="1"]'));
