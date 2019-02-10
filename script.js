@@ -12,7 +12,7 @@ function slider(cycle, direction) {
             left: position,
         }, 500);
         $('.single-slider').promise().done(function () {
-            $('.single-slider:last').after($('.single-slider[data-id="' + (cycle - 1) + '"]'));
+            $('.single-slider:last').after($('.single-slider[data-id="' + cycle+ '"]'));
             position += dist;
             $('.single-slider').css('left', position + 'px');
 
@@ -24,7 +24,7 @@ function slider(cycle, direction) {
             left: position,
         }, 500);
         $('.single-slider').promise().done(function () {
-            $('.single-slider:first').before($('.single-slider[data-id="' + (cycle - 1) + '"]'));
+            $('.single-slider:first').before($('.single-slider[data-id="' + cycle + '"]'));
             position -= dist;
             $('.single-slider').css('left', position + 'px');
 
@@ -35,11 +35,12 @@ function slider(cycle, direction) {
 
 (function ($) {
     $(function () {
-        //number of slides
 
+        //number of slides
         let slidesNumber = $('.single-slider').length;
 
-        let cycle = 1;
+        let cycle = 0;
+
         $('#cycle').text(cycle);
         $('.single-slider').each(function (index) {
             $(this).attr('data-id', index);
@@ -54,8 +55,8 @@ function slider(cycle, direction) {
             event.preventDefault();
             $('#left-click').removeClass('left-click');
             slider(cycle, 'left');
-            if (cycle === slidesNumber) {
-                cycle = 1;
+            if (cycle === slidesNumber - 1) {
+                cycle = 0;
             } else {
                 cycle += 1;
             }
@@ -64,8 +65,8 @@ function slider(cycle, direction) {
 
         $('#buttons-wrapper').on('click', '.right-click', function (event) {
             event.preventDefault();
-            if (cycle === 1) {
-                cycle = slidesNumber;
+            if (cycle === 0) {
+                cycle = slidesNumber - 1;
             } else {
                 cycle -= 1;
             }
